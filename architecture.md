@@ -58,7 +58,7 @@ Asignatura es la entidad central del sistema. Es una unidad autónoma, que encie
 Sus metadatos son:
     - Código (e.g. "20405")
     - Nombre (e.g. "Derecho Internacional Público")
-    - Universidad (e.g. "Universitat de Barcelona")
+    - Universidad (e.g. "Universitat de Barcelona", o un identificador de esa universidad)
     - Autores (e.g. "Juan Pérez, Carlos González, Jorge Ramírez")
     - Revisores (e.g. "María Gutiérrez, José Morales")
     - Fecha de última revisión (e.g. "27/07/2025")
@@ -87,6 +87,13 @@ Ejercicios/
 
 Es la unidad básica de información. Es, literalmente, un documento de markdown. Cada *Asignatura* está compuesta por una serie de documentos, que pueden ser del mismo o distinto tipo. Esos tipos pueden constituir grupos coherentes de documentos. Por ejemplo, podemos tener varios temas (véase ejemplo arriba).
 
+También tienen metadatos:
+    - Título (e.g. "Tema 1. Las fuentes del Derecho")
+    - Tipo (e.g. "tema")
+    - Asignatura (e.g. "20405")
+    - Última revisión (e.g. "7/7/2026")
+    - Autores (e.g. "Marta Rodríguez")
+
 
 ## Estructura y relaciones
 
@@ -102,7 +109,7 @@ universidades/
         asignaturas/
             asignatura-1/
                 index.md
-                metadata.yml
+                subject.yml
                 temas/
                     tema 1
                     tema 2
@@ -116,3 +123,29 @@ Por tanto, la relación entre los componentes es la siguiente:
 - La Universidad agrupa cursos
 - Cada curso tiene una serie de referencias a Asignaturas (varios cursos pueden comprender la misma Asignatura, o sea, referenciar el mismo objeto)
 - Las Asignaturas contienen Documentos
+
+## Invariantes del sistema
+
+Los siguientes principios constituyen reglas fundamentales de la arquitectura de Studium y deberán respetarse en cualquier evolución futura del proyecto.
+
+1. Toda Universidad contiene un catálogo de Cursos y un catálogo de Asignaturas.
+
+2. Todo Curso pertenece exactamente a una Universidad.
+
+3. Toda Asignatura pertenece exactamente a una Universidad.
+
+4. Un Curso nunca contiene el contenido de una Asignatura; únicamente referencia Asignaturas existentes.
+
+5. Una misma Asignatura puede ser referenciada por varios Cursos de una misma Universidad.
+
+6. Toda Asignatura constituye una unidad autónoma de conocimiento y contiene exclusivamente sus propios Documentos.
+
+7. Todo Documento pertenece exactamente a una Asignatura.
+
+8. Los Documentos pueden clasificarse en distintos tipos (Temas, Ejercicios, Casos prácticos, Exámenes, Bibliografía, Material complementario, etc.), sin que dicha clasificación limite la organización interna de la Asignatura.
+
+9. Studium no impone una estructura interna rígida para las Asignaturas; únicamente establece una gramática editorial común para favorecer la uniformidad.
+
+10. Los Cursos organizan el recorrido académico. Las Asignaturas organizan el conocimiento.
+
+11. Ningún contenido académico deberá duplicarse innecesariamente dentro de una misma Universidad cuando pueda ser referenciado.

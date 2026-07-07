@@ -1,0 +1,9 @@
+site_name: Studium
+site_description: Open academic knowledge.
+site_url: https://TU_USUARIO.github.io/Studium/
+
+theme:
+  name: material
+
+plugins:
+  - search

@@ -33,7 +33,7 @@ Sus metadatos son:
     - Nombre
     - Universidad
     - Referencias a asignaturas
-    - Años o secciones
+    - Años, secciones o semestres
 
 No contiene documentos, sino referencias a los mismos, una estructura posible es:
 
@@ -69,7 +69,7 @@ Pueden contener:
     - Casos prácticos
     - Exámenes de años anteriores
     - Material complementario
-    - Etcétera
+    - Número de créditos (o sea, número y nombre del crédito)
 
 En esos casos, cada uno de los tipos de materiales estará agrupado en desplegables, o sea:
 

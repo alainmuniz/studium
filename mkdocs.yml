@@ -1,6 +1,7 @@
 site_name: Studium
-site_description: Open academic knowledge.
-site_url: https://TU_USUARIO.github.io/Studium/
+site_description: Biblioteca académica abierta y estructurada
+site_url: https://alainmuniz.github.io/studium/
+site_author: Studium
 
 theme:
   name: material

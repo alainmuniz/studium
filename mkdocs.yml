@@ -8,3 +8,17 @@ theme:
 
 plugins:
   - search
+
+nav:
+  - Inicio: index.md
+
+  - Demo University:
+      - Inicio: demo-university/index.md
+
+      - Cursos:
+          - Grado en Derecho: demo-university/courses/grado-derecho.md
+
+      - Asignaturas:
+          - Derecho Internacional Público:
+              - Información: demo-university/subjects/20405/index.md
+              - Tema 1: demo-university/subjects/20405-derecho-internacional-publico/tema-1.md
